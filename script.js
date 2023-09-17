@@ -1,6 +1,9 @@
 let container = document.querySelector('.book-grid')
 let btn = document.getElementById('btn')
 let create = document.getElementById('create')
+let read = document.getElementById('read')
+
+let library = []
 
 function Book(name , Author , pages){
     this.name = name
@@ -32,15 +35,12 @@ function add_book(book ,cont){
 
     div.append(name , author , pages)
 
-    console.log(div)
-
     popup.classList.remove('show')
 
-    cont.append(div)
-
+    return div
 }
 
-function get_info(c){
+function get_info(container, library){
     let name =  document.getElementById('name')
     let author = document.getElementById('author')
     let pages = document.getElementById('pages')
@@ -49,8 +49,13 @@ function get_info(c){
 
     let book = new Book(name.value , author.value , pages.value)
 
-    add_book(book , c)
+    let div = add_book(book)
+
+    container.append(div)
+    library.push(book)
+    read.textContent = `Read books : ${library.length}`
+    console.log(library)
 }
 
 btn.addEventListener('click' , show_popup)
-create.addEventListener('click' , () => get_info(container))
+create.addEventListener('click' , () => get_info(container , library))
