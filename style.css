@@ -1,0 +1,105 @@
+body , h1 ,h2 ,h3 ,h4 ,h5 ,h6 {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Start of my own style */
+
+.grid {
+	display: grid;
+	grid-template-columns: 100vw;
+	grid-template-rows: 10vh 100vh;
+}
+
+.header {
+	display: flex;
+	grid-column: 1 ;
+	grid-row: 1 / 2;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	border-color: black;
+	border-width: 0px 0px 7px 0px;
+	border-style: solid;
+}
+
+
+.header h1{
+	font-size: 24px;
+	font-weight: 800;
+
+}
+
+.book-section {
+	grid-column: 1 / -1;
+	grid-row: 2 / -1;
+	display: grid;
+	grid-template-columns: 100vw;
+	grid-template-rows: 15vh 100vh;
+}
+
+#btn {
+	grid-column: 1 / -1;
+	grid-row: 1;
+	align-self: self-start;
+	justify-self: center;
+}
+
+.book-grid {
+	grid-column: 1 / -1;
+	grid-row: 2 / -1;
+	display: grid;
+	grid-template-columns: repeat(10, max-content);
+	grid-auto-rows: max-content;
+	gap:15px;
+
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+	background-color: #53736A;
+}
+
+.popup {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 15px;
+	background-color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform : translate(-50% , -50%);
+	border-style: solid;
+	border-color: black;
+	visibility: hidden;
+}
+
+.show {
+	visibility: visible;
+}
+
+input {
+	margin:10px;
+	flex-grow: 1;
+	border-radius: 7px;
+	font-size: 1.5em;
+	border-width: 1px;
+
+}
+
+input:focus {
+	outline-color: #73AABF;
+}
+
+#create {
+	margin: 15px;
+	border-radius: 12px;
+	padding: 10px 20px;
+	border-style: none;
+	background-color: #93D94E;
+}
